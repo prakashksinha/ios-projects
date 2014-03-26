@@ -5,7 +5,7 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>3EB2D9A8-1D8E-4F65-A379-728CD15E6BD0</string>
+	<string>3E9BEF14-F4B3-4EA4-B489-6F412E7E344B</string>
 	<key>IDESourceControlProjectName</key>
 	<string>dicegame</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
@@ -20,11 +20,6 @@
 		<key>2AD3492F-EA40-4F89-8B23-1A9517B7F79A</key>
 		<string>../../..</string>
 	</dict>
-	<key>IDESourceControlProjectRepositoryRootDictionary</key>
-	<dict>
-		<key>2AD3492F-EA40-4F89-8B23-1A9517B7F79A</key>
-		<string>https://github.com/prakashksinha/ios-projects</string>
-	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/prakashksinha/ios-projects/dicegame/dicegame.xcodeproj</string>
 	<key>IDESourceControlProjectVersion</key>
@@ -34,16 +29,12 @@
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
-			<key>IDESourceControlRepositoryBranchesRelativeLocationKey</key>
-			<string>branches</string>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
-			<string>public.vcs.subversion</string>
-			<key>IDESourceControlRepositoryTrunkRelativeLocationKey</key>
-			<string>trunk</string>
+			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
 			<string>2AD3492F-EA40-4F89-8B23-1A9517B7F79A</string>
 			<key>IDESourceControlWCCName</key>
-			<string>ios-projects</string>
+			<string>dicegame</string>
 		</dict>
 	</array>
 </dict>

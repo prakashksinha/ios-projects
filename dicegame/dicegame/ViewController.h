@@ -7,7 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DiceDataController.h"
+#import "DieView.h"
 
 @interface ViewController : UIViewController
+
+@property (strong, nonatomic) DiceDataController *model;
+@property (weak, nonatomic) IBOutlet UILabel *sumLabel;
+@property (weak, nonatomic) IBOutlet DieView *firstDieView;
+@property (weak, nonatomic) IBOutlet DieView *secondDieView;
+
 
 @end
