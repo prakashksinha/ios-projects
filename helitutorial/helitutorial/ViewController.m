@@ -14,9 +14,129 @@
 
 @implementation ViewController
 
-
-- (void)HeliMove
+- (void) Collision
 {
+    
+    if (CGRectIntersectsRect(Heli.frame, Obstacle1.frame)) {
+        [self EndGame];
+    }
+    if (CGRectIntersectsRect(Heli.frame, Obstacle2.frame)) {
+        [self EndGame];
+    }
+    
+    if (CGRectIntersectsRect(Heli.frame, Top1.frame)) {
+        [self EndGame];
+    }
+    if (CGRectIntersectsRect(Heli.frame, Top2.frame)) {
+        [self EndGame];
+    }
+    if (CGRectIntersectsRect(Heli.frame, Top3.frame)) {
+        [self EndGame];
+    }
+    if (CGRectIntersectsRect(Heli.frame, Top4.frame)) {
+        [self EndGame];
+    }
+    if (CGRectIntersectsRect(Heli.frame, Top5.frame)) {
+        [self EndGame];
+    }
+    if (CGRectIntersectsRect(Heli.frame, Top6.frame)) {
+        [self EndGame];
+    }
+    if (CGRectIntersectsRect(Heli.frame, Top7.frame)) {
+        [self EndGame];
+    }
+    
+    if (CGRectIntersectsRect(Heli.frame, Bottom1.frame)) {
+        [self EndGame];
+    }
+    if (CGRectIntersectsRect(Heli.frame, Bottom2.frame)) {
+        [self EndGame];
+    }
+    if (CGRectIntersectsRect(Heli.frame, Bottom3.frame)) {
+        [self EndGame];
+    }
+    if (CGRectIntersectsRect(Heli.frame, Bottom4.frame)) {
+        [self EndGame];
+    }
+    if (CGRectIntersectsRect(Heli.frame, Bottom5.frame)) {
+        [self EndGame];
+    }
+    if (CGRectIntersectsRect(Heli.frame, Bottom6.frame)) {
+        [self EndGame];
+    }
+    if (CGRectIntersectsRect(Heli.frame, Bottom7.frame)) {
+        [self EndGame];
+    }
+    
+    //223
+    if (Heli.center.y > 223) {
+        [self EndGame];
+    }
+    
+    //60
+    if (Heli.center.y < 60) {
+        [self EndGame];
+    }
+    
+}
+
+- (void) EndGame
+{
+    
+    if (ScoreNumber > HigherScore)
+    {
+        HigherScore = ScoreNumber;
+        [[NSUserDefaults standardUserDefaults] setInteger:HigherScore forKey:@"HighScoreSaved"];
+    }
+    
+    Heli.hidden = YES;
+    [timer invalidate];
+    [score invalidate];
+    
+    [self performSelector:@selector(NewGame) withObject:nil afterDelay:5];
+    
+}
+
+- (void) NewGame
+{
+    
+    Obstacle1.hidden = YES;
+    Obstacle2.hidden = YES;
+    
+    Top1.hidden = YES;
+    Top2.hidden = YES;
+    Top3.hidden = YES;
+    Top4.hidden = YES;
+    Top5.hidden = YES;
+    Top6.hidden = YES;
+    Top7.hidden = YES;
+    
+    Bottom1.hidden = YES;
+    Bottom2.hidden = YES;
+    Bottom3.hidden = YES;
+    Bottom4.hidden = YES;
+    Bottom5.hidden = YES;
+    Bottom6.hidden = YES;
+    Bottom7.hidden = YES;
+    
+    Intro1.hidden = NO;
+    Intro2.hidden = NO;
+    Intro3.hidden = NO;
+    
+    Heli.hidden = NO;
+    Heli.center = CGPointMake(20, 149);
+    Heli.image = [UIImage imageNamed:@"HeliUp.png"];
+    
+    Start = YES;
+    ScoreNumber = 0;
+    Score.text = [NSString stringWithFormat:@"Score: 0"];
+    Intro3.text = [NSString stringWithFormat:@"High Score: %i", HigherScore];
+}
+
+- (void) HeliMove
+{
+    
+    [self Collision];
     Heli.center = CGPointMake(Heli.center.x, Heli.center.y + Y);
     
     Obstacle1.center = CGPointMake(Obstacle1.center.x - 10, Obstacle1.center.y);
@@ -109,6 +229,12 @@
     }
 }
 
+- (void) Scoring
+{
+    ScoreNumber = ScoreNumber + 1;
+    Score.text = [NSString stringWithFormat:@"Score: %i", ScoreNumber];
+}
+
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
     if (Start == YES)
@@ -118,6 +244,8 @@
         Intro3.hidden = YES;
         
         timer = [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(HeliMove) userInfo:nil repeats:YES];
+        
+        score = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(Scoring) userInfo:nil repeats:YES];
         
         Start = NO;
         
@@ -229,6 +357,9 @@
     Bottom5.hidden = YES;
     Bottom6.hidden = YES;
     Bottom7.hidden = YES;
+    
+    HigherScore = [[NSUserDefaults standardUserDefaults] integerForKey:@"HighScoreSaved"];
+    Intro3.text = [NSString stringWithFormat:@"High Score: %i", HigherScore];
     
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.

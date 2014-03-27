@@ -21,7 +21,7 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="HeliUp.png" translatesAutoresizingMaskIntoConstraints="NO" id="Yrf-cc-tv6">
-                                <rect key="frame" x="20" y="149" width="48" height="35"/>
+                                <rect key="frame" x="12" y="142" width="48" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="High Score" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QMy-JA-0ed">
@@ -109,6 +109,13 @@
                                 <rect key="frame" x="391" y="-5" width="89" height="74"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Score: 0" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="217" translatesAutoresizingMaskIntoConstraints="NO" id="a5g-sV-Bot">
+                                <rect key="frame" x="263" y="299" width="217" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
@@ -129,6 +136,7 @@
                         <outlet property="Intro3" destination="QMy-JA-0ed" id="54a-ak-cCw"/>
                         <outlet property="Obstacle1" destination="5sy-b8-uzL" id="CCi-XU-7tK"/>
                         <outlet property="Obstacle2" destination="Xd7-De-9sF" id="dzw-7k-xqH"/>
+                        <outlet property="Score" destination="a5g-sV-Bot" id="5fi-5Q-IdE"/>
                         <outlet property="Top1" destination="4Tm-l3-XLQ" id="d1Y-4p-0A9"/>
                         <outlet property="Top2" destination="5Uy-D8-N0k" id="N3z-pq-nZm"/>
                         <outlet property="Top3" destination="3ms-bK-8qk" id="0gH-Z2-WRp"/>
